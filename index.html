@@ -12,10 +12,13 @@
     <link rel ="stylesheet" href = "style.css">
     <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
-  </head>
+
+    </head>
   <body onload="slider()">
+    
     <nav class="navbar navbar-expand-xxl|xl|lg|md|sm navbar fixed-top ">
-       <div class="logo"><p style="font-family: cursive;">Anistacy</p></div>
+        <div class="logo"><p style="font-family: cursive;">Anistacy</p></div>
+           
             <ul class="nav justify-content-end">
                 <li class="nav-item" >
                     <a  href="#Home"> Home</a>
@@ -24,54 +27,68 @@
                       <a  href="#All products">All products</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#Figurine">Figurine</a>
+                    <a href="#About">About</a>
             </li>
         
         <li class="nav-item">
             <a  href="#Contact me">Contact me</a>
     </li>
+    <li class="nav-item">
+      <a  href="#Account">Account</a>
+      <img src="Images/bag.png" width="30px" height="30px" >
+</li>
     
             </ul>
+            
+ 
         
     </nav>
+
+    
+    
+    <section id="Home">
       <div class="banner">
-         <div class="slider">
-            <img src="Images/aot.jpg" id="slideImg">
-         </div>
-         <div class="overlay">
-            
-            </div>
-            <div class="content">
-                <h3>Exciting!!</h3>
-                <h1>New Arrivals!!</h1>
-                <div >
-                    <button type="button">Shop Now
+        <div class="slider">
+           <img src="Images/aot.jpg" id="slideImg">
+        </div>
+        <div class="overlay">
+           
+           </div>
+           <div class="content">
+               <p class="animate-charcter" style="font-size: 30px;font-weight: 900;">Exciting!!</p><br>
+               <p class="animate-charcter" style="font-size :60px;font-weight: 900;">New Arrivals!!</p>
+               <div >
+                   <button type="button">Shop Now
 
-                    </button>
+                   </button>
 
-                </div>
-            </div>
-         </div>
-      </div>
-      <script>
-        var slideImg=document.getElementById("slideImg");
-        var images=new Array("Images/dms.jpg",
-        "Images/bc.jpg",
-        "Images/aot.jpg",
-        "Images/jjk.jpg");
-        var len=images.length;
-        var i=0;
-        function slider()
-        {
-            if(i>len-1)
-            {
-                i=0;
-            }
-            slideImg.src=images [i];
-            i++;
-            setTimeout('slider()',3000);
-        }
-      </script>
+               </div>
+           </div>
+        </div>
+     </div>
+     <script>
+       var slideImg=document.getElementById("slideImg");
+       var images=new Array("Images/pikachu.png",
+       "Images/anya.jpg",
+       "Images/aot.jpg",
+       "Images/onep.jpg",
+       "Images/naruto.jpg");
+       var len=images.length;
+       var i=0;
+       function slider()
+       {
+           if(i>len-1)
+           {
+               i=0;
+           }
+           slideImg.src=images [i];
+           i++;
+           setTimeout('slider()',3000);
+       }
+     </script>
+
+    </section>
+      
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
