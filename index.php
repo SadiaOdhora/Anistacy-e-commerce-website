@@ -1,118 +1,86 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php include "db_conn.php";
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
-<title>Anistacy</title>
-    <link rel ="stylesheet" href = "style.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
 
-    </head>
-  <body onload="slider()">
-    
-    <nav class="navbar navbar-expand-xxl|xl|lg|md|sm navbar fixed-top ">
-        <div class="logo"><p style="font-family: cursive;">Anistacy</p></div>
-           
-            <ul class="nav justify-content-end">
-                <li class="nav-item" >
-                    <a  href="#Home"> Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a  href="#Latest">Latest</a>
 
-                </li>
-                    <li class="nav-item">
-                      <a  href="Products.html">All products</a>
-
-                </li>
-        
-        <li class="nav-item">
-            <a  href="#Contact me">Contact</a>
-    </li>
-    <li class="nav-item">
-      <a  href="Accounts.html">Account</a>
+ 
+  <title>Anistacy</title>
+  <style>
+    .btn{
+      background-color:rgb(234, 142, 85);
+      width:50%
+    }
+    </style>
+</head>
+<body>
+  <section id ="header">
+    <div class="logo">Anistacy</div>
+      <div>
+      <ul id="navbar">
+      <li><a class="active" href="#Home">Home</a></li>
+       <li><a  href="#feature">Latest</a></li>
+       <li> <a  href="Products.php">Products</a></li>
+       <li> <a  href="contact.php">Contact</a></li>
+       <li><a href="login.php">Login</a></li>
+       <li id="lg-bag"><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+       <a href="#" id="close"><i class="fas fa-times"></i></a>
       
-      
+      </ul>
+    </div>
+    <div id="mobile">
      
-</li>
-<li class="nav-item">
-  <a  href="#cart"><img src="Images/bag.png" width="30px" height="30px" margin-right="10px"  ></a>
-  
-  
-</li>
-<li class="nav-item">
-  <a  href="#menu"> <img src="Images/menu.png" class="menu-icons"></a>
-</li>
-
-            </ul>
-           
-    </nav>
-    
-    <section id="Home">
-      <div class="banner">
-        <div class="slider">
-           <img src="Images/aot.jpg" id="slideImg">
-        </div>
-        <div class="overlay">
-           
-           </div>
-           <div class="content">
-               <p class="animate-charcter" style="font-size: 30px;font-weight: 900;">Exciting!!</p><br>
-               <p class="animate-charcter" style="font-size :60px;font-weight: 900;">New Arrivals!!</p>
-               <div >
-                   <button type="button">
-                    <a  href="Products.html">Shop Now</a>
-
-                   </button>
-
-               </div>
-           </div>
-        </div>
-     </div>
-     <script>
-       var slideImg=document.getElementById("slideImg");
-       var images=new Array("Images/pikachu.png",
-       "Images/anya.jpg",
-       "Images/aot.jpg",
-       "Images/onep.jpg",
-       "Images/naruto.jpg");
-       var len=images.length;
-       var i=0;
-       function slider()
-       {
-           if(i>len-1)
-           {
-               i=0;
-           }
-           slideImg.src=images [i];
-           i++;
-           setTimeout('slider()',3000);
-       }
-     </script>
-
-    </section>
-
-    <section id="Latest">
+      <a href=""><i class="fas fa-shopping-cart"></i></a>
+      <i id="bar" class="fas fa-outdent"></i>
+     
       
-        
-      <div class="catagories">
+</div>
+<script src ="bar.js"></script>
+</section>
+
+<section id="hero">
+  <h4 class="animate-charcter" style="font-size: 25px;font-weight: 900;margin-top:55px;">Trade-in-offer</h4><br>
+  <h2 class="animate-charcter" style="font-size: 30px;font-weight: 900;">Super value deals</h2><br>
+  <h1 class="animate-charcter" style="font-size: 35px;font-weight: 900;">On all products</h1><br>
+  <p class="animate-charcter" style="font-size: 20px;font-weight: 900;">Save more with coupons & up to 70% off!</p><br>
+  <button><a href="Products.php">Shop Now</a></button>
+</section>
+
+<section id="feature">
+ <div class="catagories">
+   <h2 class="title" style="margin-right:250px;">Catagories</h2>
         <div class="small-container">
-        <div class="row">
-          <div class="col-3">
-            <img src="Images/p2.jpg"  >
+             <div class="row">
+             <?php
+        $select_query="Select *from catagories";
+        $result=mysqli_query($conn,$select_query);
+       
+        while($row=mysqli_fetch_assoc($result)){
+          $catagory_id=$row['catagory_id'];
+          $catagory_title=$row['catagory_title'];
+          $product_image=$row['image'];
+          echo "<div class='col-3'>
+          <h4>$catagory_title</h4>
+          <img src='./Uploads/$product_image'>
           </div>
-          <div class="col-3"><img src="Images/p4.jpg" ></div>
-          <div class="col-3"><img src="Images/p8.jpg" ></div>
-         
+       ";
+        }
+        
+        ?>
           </div>
         </div>
       </div>
@@ -120,19 +88,30 @@
     <div class="small-container">
       <h2 class="title">Featured products</h2>
       <div class="row">
-        <div class="col-4">
-          <img src="Images/p4.jpg">
-          <h4>Itachi Sneakers</h4>
-          <div class="rating">
-            <i class="fa fa-star" ></i>
-            <i class="fa fa-star" ></i>
-            <i class="fa fa-star" ></i>
-            <i class="fa fa-star" ></i>
-            <i class="fas fa-star-half-alt"></i>
-
+        <!--fetching products--->
+        <?php
+        $select_query="Select *from products";
+        $result=mysqli_query($conn,$select_query);
+       
+        while($row=mysqli_fetch_assoc($result)){
+          $product_id=$row['product_id'];
+          $product_title=$row['product_title'];
+          $product_description=$row['product_description'];
+          $catagory_id=$row['catagory_id'];
+          $product_image=$row['product_image'];
+          $product_price=$row['product_price'];
+          echo "<div class='col-4'>
+          <img src='./Uploads/$product_image'>
+          <h4>$product_title</h4>
+          <p>$product_description</p>
+          <p>Tk.$product_price</p>
+          <button class='btn'><a href='cart.php'>Add to cart</a></button>
           </div>
-          <p>TK.1200</p>
-        </div>
+       ";
+        }
+        
+        ?>
+        <!---
         <div class="col-4">
           <img src="Images/p8.jpg">
           <h4>Bracelet</h4>
@@ -159,24 +138,34 @@
           </div>
           <p>TK.550</p>
         </div>
-        <div class="col-4">
-          <img src="Images/p6.jpg">
-          <h4>Kimono</h4>
-          <div class="rating">
-            <i class="fa fa-star" ></i>
-            <i class="fa fa-star" ></i>
-            <i class="fa fa-star" ></i>
-            <i class="fa fa-star" ></i>
-            <i class="far fa-star"></i>
+        
+        </div>-->
 
-          </div>
-          <p>TK.700</p>
-        </div>
-       
-        </div>
         <h2 class="title">Latest Products</h2>
         <div class="row">
-          <div class="col-4">
+        <?php
+        $select_query="Select *from products";
+        $result=mysqli_query($conn,$select_query);
+       
+        while($row=mysqli_fetch_assoc($result)){
+          $product_id=$row['product_id'];
+          $product_title=$row['product_title'];
+          $product_description=$row['product_description'];
+          $catagory_id=$row['catagory_id'];
+          $product_image=$row['product_image'];
+          $product_price=$row['product_price'];
+          echo "<div class='col-4'>
+          <img src='./Uploads/$product_image'>
+          <h4>$product_title</h4>
+          <p>$product_description</p>
+          <p>Tk.$product_price</p>
+          <button class='btn'><a href='cart.php'>Add to cart</a></button>
+          </div>
+       ";
+        }
+        
+        ?>
+          <!--<div class="col-4">
             <img src="Images/p18.jpg">
             <h4>T-Shirt</h4>
             <div class="rating">
@@ -291,78 +280,10 @@
 
         </div>
       </div>
-    </div>
-    <section id="Contact me">
-      <section class="contact">
-      <div class="content1">
-        <h2>Contact me</h2>
-
-      </div>
-      <div class="container-fluid">
-          <div class="row">
-            <div class="col">
-              <div class="contactinfo">
-                <div class="box">
-                  <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                  <div class="text3">
-                    <h3>Address</h3>
-                    <p>House no:07,Road no:02,Sector:03,Tushardhara,Matuail,Dhaka-1362</p>
-                  </div>
-      
-                  
-                </div>
-                <div class="box">
-                  <div class="icon"><i class="far fa-phone"></i></div>
-                  <div class="text3">
-                    <h3>Phone</h3>
-                    <p>01937081420</p>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="icon"><i class="fa fa-envelope"></i></div>
-                  <div class="text3">
-                    <h3>E-mail</h3>
-                    <p>sadiaodhora1406@gmail.com</p>
-                  </div>
-                </div>
-      
-              </div>
-            </div>
-            <div class="col">
-              <div class="contactForm">
-                <form>
-                  <h2>
-                    Send Message
-                  </h2>
-                  <div class="inputBox">
-                    <input type="text" name="" required="required">
-                    <span>Full Name</span>
-                
-                  </div>
-                  <div class="inputBox">
-                    <input type="text" name="" required="required">
-                    <span>E-mail</span>
-                
-                  </div>
-                  <div class="inputBox">
-                   <textarea required="required"></textarea>
-                    <span>Type your message...</span>
-                
-                  </div>
-                  <div class="inputBox">
-                    <input type="submit" name="" value="Send">
-                    
-                
-                  </div>
-                </form>
-              </div>
-            </div>
-        
-        
-      </div>
-    </section>
-
-
+    </div>-->
+</section>
+    
+    
     <!----- footer------>
 
     <footer class="footer">
@@ -415,11 +336,12 @@
 
         </div>
     </footer>
-  </section>
-      
-   
+</section>
 
 
    
-  </body>
+   <!-- javascript to make side menu appear -->
+  
+ 
+</body>
 </html>

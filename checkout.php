@@ -1,5 +1,5 @@
 <?php
-@include 'config.php';
+ include 'db_conn.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
             </div>
             <div class="inputBox">
                 <span>Your Number:</span>
-                <input type="tel" name="number" placeholder="Enter number:" pattern="[0-9]{3}-[0-9]{3}-[0-9]{5}" required>
+                <input type="tel" name="number" placeholder="Enter number:" required>
             </div>
             <div class="inputBox">
                 <span>Your Email:</span>

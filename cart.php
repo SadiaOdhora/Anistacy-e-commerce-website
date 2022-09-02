@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $database_name = "product_details";
+    $database_name = "anistacy";
     $con = mysqli_connect("localhost","root","",$database_name);
 
     if (isset($_POST["add"])){
@@ -38,14 +38,14 @@
         $product_price = $_POST['hidden_price'];
         $item_quantity = $_POST['quantity'];
 
-        $select_cart = mysqli_query($con, "SELECT * FROM `orderlist` WHERE P_NAME = '$item_name'");
+        $select_cart = mysqli_query($con, "SELECT * FROM orderlist WHERE P_NAME = '$item_name'");
        
         if(mysqli_num_rows($select_cart) > 0){
             // echo '<script>alert("Product has been added to orderlist...!")</script>';
             // echo '<script>window.location="cart.php"</script>';
         }
         else{
-            $insert_product = mysqli_query($con, "INSERT INTO `orderlist`(P_NAME,PRICE,QUANTITY)
+            $insert_product = mysqli_query($con, "INSERT INTO orderlist(P_NAME,PRICE,QUANTITY)
             VALUES('$item_name','$product_price','$item_quantity')");
         }
 
@@ -108,7 +108,7 @@
   <div class="container" style="width: 70%">
         <h2>Shopping Cart</h2>
         <?php
-            $query = "SELECT * FROM product ORDER BY ID ASC";
+            $query = "SELECT * FROM products ORDER BY product_id ASC";
             $result = mysqli_query($con,$query);
             if(mysqli_num_rows($result)> 0){
 
@@ -117,15 +117,15 @@
                  ?>
 
                 <div class="box_container">
-                    <form method="post" action="cart.php?action=add&id=<?php echo $row["ID"]?>">
+                    <form method="post" action="cart.php?action=add&id=<?php echo $row["product_id"]?>">
 
                         <div class="product">
-                            <img src="<?php echo $row["IMAGE"]; ?>" class="img_responsive" name="prod_img">
-                            <h5 class="text_info"><?php echo $row["P_NAME"]; ?></h5>
-                            <h5 class="text-danger">Tk.<?php echo $row["PRICE"]; ?></h5>
+                            <img src="<?php echo $row["product_image"]; ?>" class="img_responsive" name="prod_img">
+                            <h5 class="text_info"><?php echo $row["product_title"]; ?></h5>
+                            <h5 class="text-danger">Tk.<?php echo $row["product_price"]; ?></h5>
                             <input type="text"   name="quantity" class="form-control" value="1">
-                            <input type="hidden" name="hidden_name" value="<?php echo $row["P_NAME"]; ?>">
-                            <input type="hidden" name="hidden_price" value="<?php echo $row["PRICE"]; ?>">
+                            <input type="hidden" name="hidden_name" value="<?php echo $row["product_title"]; ?>">
+                            <input type="hidden" name="hidden_price" value="<?php echo $row["product_price"]; ?>">
                             <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-danger" value="Add To Cart">
 
                         </div>
@@ -174,8 +174,8 @@
                     }
                         ?>
                         <tr>
-                            <td colspan="3" align="right">Total</td>
-                            <th align="right">Tk <?php echo number_format($total, 2); ?></th>
+                            <td colspan="3" align-items="right">Total</td>
+                            <th align-items="right">Tk <?php echo number_format($total, 2); ?></th>
                             <td></td>
                         </tr>
                         <?php
